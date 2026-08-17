@@ -1,0 +1,6 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { PageHero } from '@/components/PageHero';
+const solutions = [['Bathroom', 'Waterproof. Fix. Grout. Seal.', ['Aqua Shield 2K', 'Tile Adhesive', 'Tile Grout', 'Grout Sealer']], ['Flooring', 'Level. Install. Live.', ['Quick Flow', 'Tile Adhesive', 'Swissparkett']], ['Roof', 'Cover. Join. Complete.', ['Roof Master', 'General Purpose Silicone']], ['Exterior', 'Protect. Finish. Beautify.', ['Skim Coat', 'Decorative Pebbles', 'Tile Cleaner']]];
+export const metadata: Metadata = { title: 'Solutions', description: 'Explore Swisstek product systems by space and application.' };
+export default function Page() { return <main><PageHero eyebrow="02 / Solutions by space" title="START WITH THE SPACE." intro="Move from a construction need to a complete, understandable product pathway." /><section className="solutions-grid">{solutions.map(([title, line, items], index) => <article key={title as string}><span>0{index + 1}</span><div className={`solution-art art-${index + 1}`} /><small>{title as string}</small><h2>{line as string}</h2><ul>{(items as string[]).map((item) => <li key={item}>{item}</li>)}</ul><Link href="/products">Explore system ↗</Link></article>)}</section></main>; }

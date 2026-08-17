@@ -1,0 +1,6 @@
+import type { Metadata } from 'next';
+import { PageHero } from '@/components/PageHero';
+import { ContactForm } from '@/components/utility/UtilityPages';
+import { contact } from '@/data/site';
+export const metadata: Metadata = { title: 'Contact', description: 'Contact Swisstek Ceylon corporate office and factory.' };
+export default function Page() { return <main><PageHero eyebrow="08 / Contact" title="LET’S BUILD THE CONVERSATION." intro="Product guidance, project support and general enquiries—connect with the Swisstek team." /><section className="contact-layout"><div className="contact-details"><article><span>01 / CORPORATE OFFICE</span><h2>{contact.office}</h2><a href={`tel:${contact.officePhone.replace(/\s/g,'')}`}>{contact.officePhone}</a><a href={`mailto:${contact.email}`}>{contact.email}</a></article><article><span>02 / FACTORY</span><h2>{contact.factory}</h2><a href={`tel:${contact.factoryPhone.replace(/\s/g,'')}`}>{contact.factoryPhone}</a><a href={`mailto:${contact.email}`}>{contact.email}</a></article><div className="contact-map"><span>COLOMBO / IMBULGODA</span><i /><i /></div></div><div><p className="form-label">03 / ALL ENQUIRIES</p><h2 className="form-title">How can we help?</h2><ContactForm /></div></section></main>; }

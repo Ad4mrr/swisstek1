@@ -1,0 +1,5 @@
+import type { Metadata } from 'next';
+import { PageHero } from '@/components/PageHero';
+import { ContactForm } from '@/components/utility/UtilityPages';
+export const metadata: Metadata = { title: 'Careers', description: 'Explore career opportunities at Swisstek Ceylon PLC.' };
+export default function Page() { return <main><PageHero eyebrow="09 / Careers" title="BUILD WHAT COMES NEXT." intro="Join a team working across manufacturing, product development, operations, sales and the future of finished spaces." /><section className="career-layout"><div><p>01 / OPEN POSITIONS</p><article className="role-card"><span>PROTOTYPE ROLE</span><h2>Design & Digital Experience</h2><p>Colombo · Marketing · Full time</p><small>Vacancy content requires approval before production publication.</small></article><article className="role-card closed"><span>MORE ROLES</span><h2>Nothing else published</h2><p>Check back for verified openings.</p></article></div><div><p className="form-label">02 / APPLICATION</p><h2 className="form-title">Tell us about you.</h2><ContactForm careers /></div></section></main>; }
